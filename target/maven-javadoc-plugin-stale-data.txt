@@ -1,0 +1,51 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+--no-fonts
+-classpath
+'C:/Users/donat/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar;C:/Users/donat/.m2/repository/com/google/protobuf/protobuf-java/3.21.9/protobuf-java-3.21.9.jar'
+-encoding
+'UTF-8'
+-private
+-source
+'24'
+-sourcepath
+'C:/Users/donat/www/udemy/jakartaEE/java_course/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/donat/www/udemy/jakartaEE/java_course/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'java_jdbc 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'java_jdbc 1.0-SNAPSHOT API'
+es.donatodev.java.jdbc
+es.donatodev.java.jdbc.modelo
+es.donatodev.java.jdbc.repositorio
+es.donatodev.java.jdbc.util
+C:\Users\donat\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar = 1755542484344
+C:\Users\donat\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar = 1755542484776
+C:\Users\donat\www\udemy\jakartaEE\java_course\src\main\java = 1755542322047
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\allclasses-index.html = 1755867738757
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\allpackages-index.html = 1755867738760
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\constant-values.html = 1755867738636
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\element-list = 1755867738561
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\help-doc.html = 1755867738802
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\index-all.html = 1755867738791
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\index.html = 1755867738738
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\member-search-index.js = 1755867738766
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\module-search-index.js = 1755867738762
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\overview-summary.html = 1755867738797
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\overview-tree.html = 1755867738730
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\package-search-index.js = 1755867738763
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\search.html = 1755867738794
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\tag-search-index.js = 1755867738767
+C:\Users\donat\www\udemy\jakartaEE\java_course\target\reports\apidocs\type-search-index.js = 1755867738765
