@@ -15,23 +15,25 @@ import java.util.logging.Logger;
 
 import es.donatodev.java.jdbc.modelo.Categoria;
 import es.donatodev.java.jdbc.modelo.Producto;
+import es.donatodev.java.jdbc.util.ConexionBaseDatos;
+
 import static es.donatodev.java.jdbc.repositorio.Messages.*;
 
 public class ProductoRepositorioImpl implements Repositorio<Producto> {
-    private final Connection conn;
     private static final Logger LOGGER=Logger.getLogger(ProductoRepositorioImpl.class.getName());
     // Constantes SQL movidas a SqlQueries.java
     // Mensajes movidos a Messages.java
 
-    public ProductoRepositorioImpl(Connection conn) {
-        this.conn = conn;
+    private Connection getConnection() throws SQLException {
+        return ConexionBaseDatos.getInstance();
     }
 
     @Override
     public List<Producto> listar() {
         List<Producto> productos = new ArrayList<>();
-    try (Statement stmt = this.conn.createStatement();
-         ResultSet rs = stmt.executeQuery(SQL_LISTAR)) {
+    try (Connection conn=getConnection();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(SQL_LISTAR)) {
 
             while (rs.next()) {
                 Producto producto = crearProducto(rs);
@@ -49,8 +51,9 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     @Override
     public Producto porId(Long id) {
         Producto producto=null;
-    try(PreparedStatement stmt=this.conn.prepareStatement(SQL_POR_ID)) {
-            stmt.setLong(1,id);
+    try(Connection conn=getConnection();
+        PreparedStatement stmt=conn.prepareStatement(SQL_POR_ID)) {
+        stmt.setLong(1,id);
             try(ResultSet rs=stmt.executeQuery()){
                 if(rs.next()) {
                     producto=crearProducto(rs);
@@ -71,7 +74,8 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
         } else {
             sql=SQL_GUARDAR;
         }
-        try(PreparedStatement stmt=this.conn.prepareStatement(sql)) {
+        try(Connection conn=getConnection();
+            PreparedStatement stmt=conn.prepareStatement(sql)) {
             stmt.setString(1,producto.getNombre());
             stmt.setLong(2, producto.getPrecio());
             stmt.setLong(3,producto.getCategoria().getId());
@@ -95,7 +99,8 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     
     @Override
     public void eliminar(Long id) {
-    try(PreparedStatement stmt=conn.prepareStatement(SQL_ELIMINAR)) {
+    try(Connection conn=getConnection();
+        PreparedStatement stmt=conn.prepareStatement(SQL_ELIMINAR)) {
             stmt.setLong(1, id);
             stmt.executeUpdate();
             LOGGER.log(Level.SEVERE,MSG_DELETE_FOR_ID_OK);
